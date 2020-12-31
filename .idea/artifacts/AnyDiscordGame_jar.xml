@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AnyDiscordGame:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AnyDiscordGame_jar</output-path>
+    <root id="archive" name="AnyDiscordGame.jar">
+      <element id="module-output" name="AnyDiscordGame" />
+    </root>
+  </artifact>
+</component>
