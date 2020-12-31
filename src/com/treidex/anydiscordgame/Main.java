@@ -1,5 +1,12 @@
 package com.treidex.anydiscordgame;
 
+/*
+ * Symple Program that allows you to
+ * display a custom game in discord.
+ * Teddy Telanoff
+ * (C) 2020 Treidex
+ */
+
 import javax.swing.*;
 import java.awt.*;
 
