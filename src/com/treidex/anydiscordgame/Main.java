@@ -5,24 +5,31 @@ import java.awt.*;
 
 public class Main {
     String mTitle = "Any Discord Game";
-    JTextArea mTextField;
+    JTextArea mTextArea;
     JFrame mWindow;
+    JScrollPane mPane;
 
     Thread mCheckThread;
 
     Main() {
         mWindow = new JFrame(mTitle);
-        mWindow.setSize(500, 400);
-
-        mTextField = new JTextArea(mTitle);
-        mTextField.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 14));
-        mWindow.add(mTextField);
+        mWindow.setLayout(new BorderLayout());
         mWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mWindow.setSize(new Dimension(500, 400));
+        mWindow.setPreferredSize(new Dimension(500, 400));
+
+        mTextArea = new JTextArea(mTitle);
+        mTextArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 24));
+        mTextArea.setLineWrap(true);
+        mTextArea.setWrapStyleWord(true);
+
+        mPane = new JScrollPane(mTextArea);
+        mWindow.add(mPane, BorderLayout.CENTER);
 
         mCheckThread = new Thread(() -> {
             while (true) {
-                if (!mTitle.equals(mTextField.getText())) {
-                    mTitle = mTextField.getText();
+                if (!mTitle.equals(mTextArea.getText())) {
+                    mTitle = mTextArea.getText();
                     mWindow.setTitle(mTitle);
                 }
             }
